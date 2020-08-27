@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet, Button, TouchableOpacity, TouchableNativeFeedback, Platform, TouchableNativeFeedbackBase } from 'react-native'
+import { View, Text, Image, StyleSheet, TouchableOpacity, TouchableNativeFeedback, Platform, TouchableNativeFeedbackBase } from 'react-native'
 import Card from '../UI/Card'
 
 const ProductItem = (props) => {
@@ -42,8 +42,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '60%',
         borderTopRightRadius: 10,
-        borderTopLeftRadius: 10,
-        overflow: 'hidden'
+        borderTopLeftRadius: 10
     },
     image: {
         width: '100%',
@@ -51,7 +50,7 @@ const styles = StyleSheet.create({
     },
     touchable: {
         overflow: 'hidden',
-        borderRadius: 10
+        borderRadius: 10,
     },
     details: {
         alignItems: 'center',
