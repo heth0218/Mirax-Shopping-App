@@ -8,8 +8,9 @@ import ReduxThunk from 'redux-thunk';
 import productsReducer from './store/reducers/products';
 import cartReducer from './store/reducers/cart';
 import ordersReducer from './store/reducers/orders';
-import ShopNavigator from './navigation/ShopNavigator';
+import NavigationContainer from './navigation/NavigationContainer';
 import authReducer from './store/reducers/auth'
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const rootReducer = combineReducers({
   products: productsReducer,
@@ -18,7 +19,7 @@ const rootReducer = combineReducers({
   auth: authReducer
 });
 
-const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(ReduxThunk)));
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -42,7 +43,7 @@ export default function App() {
   }
   return (
     <Provider store={store}>
-      <ShopNavigator />
+      <NavigationContainer />
     </Provider>
   );
 }
